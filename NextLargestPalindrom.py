@@ -3,8 +3,6 @@ SPOJ_PALIN
 By : Akshay Sharma
 Date: 24/07/16
 """
-
-
 def next_palindrome(number):
     numbers = [int(i) for i in str(number)]
     if all_nine(numbers):
