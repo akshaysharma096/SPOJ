@@ -10,6 +10,34 @@ def output(expression):
         add(expression)
     elif '-' in expression:
         sub(expression)
+    elif '*' in expression:
+        multiply(expression)
+
+
+def multiply(expression):
+    expression_list = expression.split("*")
+    int_1 = int(expression_list[0])
+    int_2 = int(expression_list[1])
+    result_str = str(int_1 * int_2)
+    str_1 = expression_list[0]
+    str_2 = expression_list[1]
+    str_2 = "*%s" % str_2
+    l = len(result_str)
+    l_2 = max(len(str_2), len(str(int(expression_list[1][-1]) * int_1)))
+    dashes_1 = "-" * l_2
+    dashes_2 = "-" * l
+    print(str_1.rjust(l, " "), str_2.rjust(l, " "), dashes_1.rjust(l, " "), sep="\n")
+    i = len(expression_list[1]) - 1
+    j = 0
+    while i >= 0:
+        digit = int(expression_list[1][i])
+        answer = str(int_1 * digit)
+        print(answer.rjust(l - j), " ")
+        i -= 1
+        j += 1
+    if j == 1:
+        return
+    print(dashes_2.rjust(l, " "), result_str.rjust(l, " "), sep="\n")
 
 
 def add(expression):
