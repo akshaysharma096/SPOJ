@@ -25,7 +25,6 @@ def multiply(expression):
     l_2 = max(len(str_2), len(str(int(expression_list[1][-1]) * int_1)))
     l = max(len(result_str),l_2)
     dashes_1 = "-" * l_2
-    dashes_2 = "-" * l
     print(str_1.rjust(l, " "), str_2.rjust(l, " "), dashes_1.rjust(l, " "), sep="\n")
     i = len(expression_list[1]) - 1
     j = 0
@@ -37,8 +36,7 @@ def multiply(expression):
         j += 1
     if j == 1:
         return
-    dashes_3 = "-"*len(result_str)
-    print(dashes_3.rjust(l, " "), result_str.rjust(l, " "), sep="\n")
+    print(("-"*len(result_str)).rjust(l, " "), result_str.rjust(l, " "), sep="\n")
 
 
 def add(expression):
